@@ -13,6 +13,9 @@ from dotenv import load_dotenv
 # load_dotenv()
 # TOKEN = os.getenv('DISCORD_TOKEN')
 # print(TOKEN)
+
+# This isn't the correct token
+# This will fail if you try to run it
 TOKEN = "ODA2NjkwMTc2NjYyNTAzNDQ1.YBtGxQ.3UdneWzSpFK9j7EkFBSmqqs3tEI"
 client = discord.Client()
 
