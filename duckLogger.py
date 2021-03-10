@@ -1,4 +1,5 @@
 
+# Basic class for users
 class user:
     def __init__(self, name, ducks):
         self.name = name
@@ -6,12 +7,15 @@ class user:
     def formatReturn(self):
         return f'{self.name}-{self.timesDucked}'
 
+# Checks if there's a user with name in the supplied list, returns the index if it's there
+# String if it's not there
 def inUserList(name, list):
     for i in range(len(list)):
         if list[i].name == name:
             return i
     return "no user with that name"
 
+# Returns a list of users from "ducks.txt"
 def getInfo():
     f = open("ducks.txt", "r")
     returnUsers = []
@@ -25,6 +29,7 @@ def getInfo():
     f.close()
     return returnUsers
 
+# Writes a list of users in a formated way to the file "ducks.txt"
 def writeInfo(users):
     f = open("ducks.txt", "w")
     returnUsers = ""
@@ -36,6 +41,7 @@ def writeInfo(users):
     f.write(returnUsers)
     f.close()
 
+# Main, used for testing
 if __name__ == "__main__":
     james = user("james", 0)
 

@@ -24,6 +24,9 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.content == "!ducks":
+        # Can't be called from the devotion channel
+        if message.channel.name == "gaming":
+            return
         send = ""
         users = duckLogger.getInfo()
         for user in users:
@@ -31,6 +34,10 @@ async def on_message(message):
         await message.channel.send(send)
 
     if message.channel.name == "gaming":
+        # If bot sends message, doesn't count
+        if message.author == client.user:
+            return
+
         users = duckLogger.getInfo()
         # for user in users:
         #     print(user.formatReturn())
